@@ -17,6 +17,11 @@
         header {
             background-color: #6a1b9a;
             color: white;
+            padding: 20px 0;
+        }
+
+        header h1, header h2 {
+            margin: 0;
         }
 
         footer {
@@ -58,35 +63,29 @@
             font-family: 'Arial', sans-serif;
         }
 
-        #about-section {
-            margin-top: 40px;
-            flex: 1;
-        }
-
-        #info-section {
-            flex: 2;
+        .section-header {
+            text-align: center;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
 
     <!-- Header -->
-    <header class="text-center py-4">
+    <header class="text-center">
         <h1>My Personal Profile Webpage</h1>
+        <h2>Hey, I'm Clar!</h2>
     </header>
 
     <!-- Main Content -->
     <main class="container my-5">
-        <div class="flex-container">
-            <!-- Hi, I'm Clar! -->
-            <section id="info-section">
-                <div class="info-card" onclick="showDetails('Hobbies/Interests: Watching movies')">
-                    <h2>Hobbies/Interests</h2>
-                    <p>Watching movies</p>
-                </div>
-            </section>
+        <!-- About Me Section -->
+        <section class="section-header">
+            <h2>About Me</h2>
+            <p>I am passionate about technology and creativity. I strive to constantly learn and grow in my field.</p>
+        </section>
 
-        <!-- Education, Course, IT Experience, Goals -->
+        <!-- Education, Course, and IT Experience -->
         <section id="info-grid" class="flex-container mt-4">
             <div class="info-card" onclick="showDetails('Education: Hope in Christ Christian Academy, Philippine Pasay Chung Hua Academy')">
                 <h2>Education</h2>
@@ -100,6 +99,14 @@
             <div class="info-card" onclick="showDetails('IT Experience: Programming')">
                 <h2>IT Experience</h2>
                 <p>Programming</p>
+            </div>
+        </section>
+
+        <!-- Hobbies/Interests and Goals -->
+        <section class="flex-container mt-4">
+            <div class="info-card" onclick="showDetails('Hobbies/Interests: Watching movies')">
+                <h2>Hobbies/Interests</h2>
+                <p>Watching movies</p>
             </div>
             <div class="info-card" onclick="showDetails('Goals/Life Dream: To be able to provide a comfortable life for myself that I can sustain')">
                 <h2>Goals/Life Dream</h2>
@@ -133,5 +140,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
