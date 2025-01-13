@@ -33,6 +33,11 @@
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .info-card:hover {
+            background-color: #f1f1f1;
         }
         .flex-container {
             display: flex;
@@ -42,8 +47,8 @@
         }
         .gallery {
             display: flex;
-            justify-content: space-between;
-            gap: 20px; /* Add space between images */
+            justify-content: center;
+            gap: 20px;
             flex-wrap: wrap;
             margin-top: 30px;
         }
@@ -52,6 +57,11 @@
             height: auto;
             width: 200px; /* Set a fixed width for better alignment */
             border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
         }
         .gallery-text {
             text-align: center;
@@ -77,16 +87,16 @@
 
         <!-- Info Grid (Education, Course, IT Experience) -->
         <div class="flex-container">
-            <div class="info-card">
+            <div class="info-card" onclick="window.location.href='#';">
                 <h3>Education</h3>
                 <p>Hope in Christ Christian Academy</p>
                 <p>Philippine Pasay Chung Hua Academy</p>
             </div>
-            <div class="info-card">
+            <div class="info-card" onclick="window.location.href='#';">
                 <h3>Course</h3>
                 <p>Bachelor of Science in Computer Science Major in Software Systems</p>
             </div>
-            <div class="info-card">
+            <div class="info-card" onclick="window.location.href='#';">
                 <h3>IT Experience</h3>
                 <p>Programming</p>
             </div>
@@ -94,11 +104,11 @@
 
         <!-- Hobbies & Goals -->
         <div class="flex-container">
-            <div class="info-card">
+            <div class="info-card" onclick="window.location.href='#';">
                 <h3>Hobbies/Interests</h3>
                 <p>Watching movies</p>
             </div>
-            <div class="info-card">
+            <div class="info-card" onclick="window.location.href='#';">
                 <h3>Goals/Life Dream</h3>
                 <p>To provide a comfortable life for myself that I can sustain</p>
             </div>
@@ -107,12 +117,12 @@
         <!-- Picture Gallery using Vue.js -->
         <div class="gallery text-center" id="app">
             <div v-for="(image, index) in images" :key="index">
-                <img :src="image" :alt="'Gallery Image ' + (index + 1)">
+                <img :src="image" :alt="'Gallery Image ' + (index + 1)" @click="viewImage(image)">
             </div>
         </div>
         <!-- Description below the images -->
         <div class="gallery-text">
-            This is Saf and Baily, my absolute favorite doggos in the world!
+            This is Saf and Bailey, my absolute favorite doggos in the world!
         </div>
     </section>
 
@@ -130,6 +140,11 @@
                     "https://scontent.xx.fbcdn.net/v/t1.15752-9/473007815_914812974174734_2264539277980305085_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=ZgahcL6whHgQ7kNvgFS8esc&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1gFc25jJyhgE2ZI8ImLW_0dAJsWqSvBpRxVmIZTg6r7EOQ&oe=67ACB07C",
                     "https://scontent.xx.fbcdn.net/v/t1.15752-9/473121470_503519732758484_7169031855201699330_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=108&ccb=1-7&_nc_sid=0024fc&_nc_ohc=_mJDblVVexoQ7kNvgEhZwMn&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1gGbkLLwQO8TIQdhnrZLp_cGNdTVy8aSoH6fGXB707F1iw&oe=67ACC85C"
                 ]
+            },
+            methods: {
+                viewImage(image) {
+                    window.open(image, "_blank");
+                }
             }
         });
     </script>
@@ -139,6 +154,7 @@
 
 </body>
 </html>
+
 
 
 
